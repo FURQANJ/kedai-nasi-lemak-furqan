@@ -1,0 +1,371 @@
+:root {
+  --primary-color: #b6895b;
+  --background: #010101;
+  --font-main: 'PoppinsThin', sans-serif;
+  --spacing: 1rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body{
+    font-family: 'PoppinsThin', sans-serif;
+    background-color: var(--background);
+    color:#ffff;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+/* Navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1.4rem 5%;
+    background-color: rgba(1, 1, 1,0.8);
+    border-bottom: 1px solid #513c28;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar a {
+    text-decoration: none;
+}
+.navbar .navbar-logo {
+font-size: 2rem;
+font-weight: 700;
+color: #ffff;
+font-style: italic;
+}
+.navbar .navbar-logo span{
+    color: var(--primary-color);
+    
+}
+.navbar .navbar-nav a{
+color: #ffff;
+display:  inline-block;
+font-size: 0.8rem;
+margin: 0.0rem 1rem;
+margin-top: 10px;
+}
+.navbar .navbar-nav a:hover{
+    color: var(--primary-color);
+}
+.navbar-nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffcc00; /* warna garisan */
+    transition: width 0.3s ease;
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
+}
+.navbar .navbar-extra a{
+    color: #ffff;
+    margin: 0.1rem 0.5rem; /*0 pertama untuk atas bawah kedua untuk kiri kana*/
+}
+.navbar .navbar-extra a:hover{
+    color: var(--primary-color);
+}
+#menu-icon{
+    display: none;
+
+}
+.navbar .navbar-nav{
+display: absolute;
+}
+/* Hero Section */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image:url('nasilemak.png') ;
+    background-repeat: no-repeat;
+    background-size: cover ; /* lebar 300px, tinggi ikut nisbah */
+    background-position: center;
+}
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg, rgba(1,1,3,0.6) 25%, rgba(255,255,255,0) 45%);
+}
+.hero .content {
+    padding: 1.1rem 7%;
+    max-width: 60rem;
+}
+.hero .content h1{
+    font-size: 4.5em;
+    color: #ffff;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height: 1.2;
+}
+.hero .content h1 span {
+    color: #ad7e4e;
+}
+.hero .content p{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    mix-blend-mode: difference;
+}
+.hero .content .cta {
+    margin-top:  1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #ffff;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1,1,3,0.5) ;
+    text-decoration: none; /* buang underline */
+}
+/* About Section */
+.about, 
+.menu,
+.contact {
+    padding: 7% 1.4rem;
+    
+}
+
+.about h2, 
+.menu h2,
+.contact h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 2.8rem;
+}
+.about h2 span,
+.contact h2 span{
+    color: var(--primary-color);
+}
+.about .row{
+    display: flex;
+}
+.about .row .about-image {
+  flex: 1 1 45rem;
+  display: flex;
+  justify-content: center; /* Centerkan gambar secara horizontal */
+  align-items: center;     /* Centerkan gambar secara vertical (optional) */
+}
+
+.about .row .about-image img {
+  width: 60%;         /* Guna 100% supaya ikut saiz container */
+  height: auto;
+  border-radius: 1rem; /* Optional: bagi gambar nampak kemas */
+  object-fit: cover; 
+  
+}
+.about .row .content {
+  padding: 0 0rem;
+  flex: 1 1 35rem;
+  text-align: left;        /* Tukar ke 'center' kalau nak semua teks tengah */
+}
+.about .row .content  h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.about .row .content p
+{
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 2;
+}
+/* Menu Section */
+.menu h2{
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 2.6rem;
+}
+.menu p, .contact p {
+    text-align: center;
+    max-width: 30rem;
+    font-size: 1.4rem;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6;
+}
+.menu .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+.menu .row .menu-card{
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+.menu .row .menu-card img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* supaya gambar tak terdistort */
+  border-radius: 50%; /* kalau nak bulat */
+}
+.menu .row .menu-card .menu-card-tittle{
+    margin: 1rem auto 0.5rem;
+}
+/* Contact Section */
+.contact .row{
+display: flex;
+margin-top: 2rem;
+background-color: #222;
+flex-wrap: wrap;
+}
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form .input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--background);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+.contact .row form .input-group input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+    color: #ffff;
+}
+.contact .row form .btn{
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #ffff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+/* footer section */
+footer{
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+footer.social{
+    padding: 1rem;
+}
+footer .social a, 
+footer .links a{
+    color: #ffff;
+    margin: 1rem;
+}
+footer .social a:hover, footer .links a:hover{
+    color: var(--background);
+}
+footer .links{
+    margin-bottom: 1.4rem;
+}
+footer .credit{
+    color: var(--background);
+    font-weight: bold;
+}
+
+/* Media Quaries */
+/* Laptop */
+@media (max-width :1366px) {
+    html{
+    font-size: 75%;}
+   
+
+}
+/* Tablet */
+@media (max-width :768px) {
+    html{
+    font-size: 62.5%;
+}
+ #menu-icon{
+    display: inline-block;
+}
+.navbar .navbar-nav{
+position: absolute;
+top: 100%;
+right: -100%;
+background-color: #ffff;
+width: 30rem;
+height: 100vh;
+transition: 0.4s;
+}
+.navbar .navbar-nav.active{
+    right: 0;
+}
+.navbar .navbar-nav a{
+    color: var(--background);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+.navbar .navbar-nav a::after{
+    transform-origin: 0 0;
+}
+.navbar .navbar-nav a:hover::after{
+    transform: scalex(0.3);
+}
+
+
+#about {
+  scroll-margin-top: 6rem; /* atau ikut tinggi navbar */
+}
+.about .row{
+    flex-wrap: wrap;
+}
+#menu {
+  scroll-margin-top: 6rem; /* atau ikut tinggi navbar */
+}
+.contact .row{
+    flex-wrap: wrap;
+}
+.contact .row .map{
+    height: 30rem;
+}
+.contact .row form{
+    padding-top: 0;
+}
+#contact {
+  scroll-margin-top: 6rem; /* atau ikut tinggi navbar */
+}
+}
+/* Handphone */
+@media (max-width :450px) {
+    html{
+    font-size: 55%;}
+}
